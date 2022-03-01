@@ -25,5 +25,8 @@
             @yield('content')
         </main>
     </div>
+    {{-- Jquery & Javascripts --}}
+    <script src="{{ asset('js/jquery.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
 </body>
 </html>

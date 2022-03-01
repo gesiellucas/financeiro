@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RequisicaoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('index');
 });
@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::post('/adicionarquantia', [App\Http\Controllers\RequisicaoController::class, 'adicionarQuantia']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/exibirtudo', [RequisicaoController::class, 'exibirTudo']);
+
+Route::post('/adicionargasto', [RequisicaoController::class, 'adicionarGasto']);
