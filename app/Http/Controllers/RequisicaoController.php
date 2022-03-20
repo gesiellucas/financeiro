@@ -14,7 +14,7 @@ class RequisicaoController extends Controller
         $valor = $dados['valor'];
         $req = new Requisicao();
         $req->insert([
-            'saldo'=>$valor,
+            'saldo'=>$valor, 
             'descricao'=>'Ganho'
         ]);
         
@@ -44,10 +44,21 @@ class RequisicaoController extends Controller
         foreach($req as $item => $arr){
             $all[] = [
                 'desc'=>$arr['descricao'],
-                'valor'=>$arr['saldo']
+                'valor'=>$arr['saldo'],
+                'id'=>$arr['id']
             ];
         }
 
         return $all;
     }
+
+    public function removerItem(Request $req)
+    {   
+        // dd($req->all());
+        Requisicao::find($req['id'])->delete();
+            echo json_encode(1);exit;
+        
+    }
+
+
 }

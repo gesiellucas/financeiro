@@ -47,9 +47,13 @@ $(document).ready(function(){
                     }
                 });
             });
+
         }
+        
 
     });
+
+
     
 });
 
@@ -75,6 +79,7 @@ function exibirtudo()
                         <td>${j.desc}</td>
                         <td>R$ ${j.valor}</td>
                         <td>12/09/2022</td>
+                        <td><a href="#" onclick="javascript:removerItem(${j.id})" type="button" ><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                     `);
                     
@@ -83,3 +88,26 @@ function exibirtudo()
         },
     })
 }
+
+function removerItem(id) {
+    $.ajax({
+        url: '/removeritem',
+        data: {
+            id: id
+        },
+        dataType:'json',
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: data => {
+            if (data == 1) {
+                exibirtudo()
+            };
+        },
+        error: (x, y, z) => {
+            throw new Error('Deu erro');
+        }
+    })
+}
+
