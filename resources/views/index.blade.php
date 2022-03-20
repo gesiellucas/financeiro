@@ -30,12 +30,14 @@
                         <td>Ação</td>
                         <td>Valor</td>
                         <td>Data</td>
+                        <td></td>
                     </tr>
                 </thead>
                 
                 <tbody id="table-all">
                     
                 </tbody>
+                
             </table>
         </div>
     </div>

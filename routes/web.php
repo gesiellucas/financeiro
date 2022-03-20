@@ -26,6 +26,5 @@ Route::post('/adicionarquantia', [App\Http\Controllers\RequisicaoController::cla
 Route::get('/exibirtudo', [RequisicaoController::class, 'exibirTudo']);
 
 Route::post('/adicionargasto', [RequisicaoController::class, 'adicionarGasto']);
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/removeritem', [RequisicaoController::class, 'removerItem']);
