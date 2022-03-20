@@ -30,7 +30,7 @@
                         <td>Ação</td>
                         <td>Valor</td>
                         <td>Data</td>
-                        <td>Opções</td>
+                        <td></td>
                     </tr>
                 </thead>
                 

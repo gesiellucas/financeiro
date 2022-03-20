@@ -79,7 +79,7 @@ function exibirtudo()
                         <td>${j.desc}</td>
                         <td>R$ ${j.valor}</td>
                         <td>12/09/2022</td>
-                        <td><a href="#" onclick="javascript:removerItem(${j.id})" type="button" ><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="#" onclick="javascript:removerItem(${j.id})" type="button" ><i class="bi bi-trash"></i></a></td>
                     </tr>
                     `);
                     
